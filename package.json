@@ -6,7 +6,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "neha yadav",
   "license": "ISC",
-  "description": ""
+  "description": "node js learning",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yahoowecanwork2/node-learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yahoowecanwork2/node-learning/issues"
+  },
+  "homepage": "https://github.com/yahoowecanwork2/node-learning#readme",
+  "dependencies": {
+    "color": "^5.0.0",
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  }
 }
