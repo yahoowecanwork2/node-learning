@@ -15,3 +15,7 @@ fs.readFile("hello.txt", "utf8", (error, data) => {
     console.log("File Data:", data);
   }
 });
+fs.appendFile("hello.txt", "\n How are you", (error) => {
+  if (error) console.log("error", error);
+  else console.log("data added");
+});
