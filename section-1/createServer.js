@@ -1,6 +1,9 @@
 const http = require("http");
 const server = http.createServer((req, res) => {
-  res.write("hello, this is me neha!!!!!");
+  const name = "neha";
+  const age = 22;
+
+  res.write(`hello, my name is ${name}.and i am ${age} old.`);
   res.end();
 });
 server.listen(4800, () => {
