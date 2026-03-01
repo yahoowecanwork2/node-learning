@@ -25,9 +25,16 @@ const server = http.createServer((req, res) => {
         " and my gmail is " +
         parsedData.email;
       console.log(dataString);
-      fs.writeFileSync(parsedData.name + ".text", dataString);
-      console.log("file created");
-
+      //   fs.writeFileSync(parsedData.name + ".text", dataString);
+      //   console.log("file created");
+      fs.writeFile(parsedData.name + ".text", dataString, "utf-8", (err) => {
+        if (err) {
+          res.end("internal error");
+          return false;
+        } else {
+          console.log("file created");
+        }
+      });
       res.writeHead(200, { "content-type": "application.JSON" });
       res.end(JSON.stringify(parsedData));
     });
