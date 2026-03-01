@@ -1,4 +1,5 @@
 const http = require("http");
+const fs = require("fs");
 const queryString = require("querystring");
 const server = http.createServer((req, res) => {
   if (req.method === "POST" && req.url === "/submit") {
@@ -18,6 +19,15 @@ const server = http.createServer((req, res) => {
       //   convert to object form data
       const parsedData = queryString.parse(readableData);
       console.log("parsed data:", parsedData);
+      let dataString =
+        "My name is " +
+        parsedData.name +
+        " and my gmail is " +
+        parsedData.email;
+      console.log(dataString);
+      fs.writeFileSync(parsedData.name + ".text", dataString);
+      console.log("file created");
+
       res.writeHead(200, { "content-type": "application.JSON" });
       res.end(JSON.stringify(parsedData));
     });
